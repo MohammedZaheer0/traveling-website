@@ -11,6 +11,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import TravelAnywhere from '@/public/assets/Travel anywhere in the world with a suitcase.png';
 import Card from '@/public/assets/card.png';
 import YellowPaper from '@/public/assets/yellow paper airplane.png';
+import Feliz from '@/public/assets/feliz-mulher-africana-sentada-com-mala-isolada-em-fundo-amarelo(1)-transformed 1.png'
 
 
 import Destinations from "./destination/page";
@@ -104,11 +105,62 @@ export default function Home() {
     </div>
 
 
-    <div className="w-[90%] mx-auto">
+    <div className="md:w-[90%] w-[95%] mx-auto my-5">
       <h3 className="text-[#F85E9F]  font-semibold text-[15px]">CHOOSE YOUR NEXT DESTINATION</h3>
       <h2 className="font-semibold text-[30px] mt-2">Explore top destination</h2>
       <Destinations/>
     </div>
+
+
+    <div className="xl:mt-[150px] mt-[100px]  mb-10 w-[90%] mx-auto">
+      <div className="grid md:grid-cols-[60%_40%] grid-cols-1 justify-between items-center">
+
+    <div className="earthbackgroundyellow -z-50 relative  md:mb-2">
+                  <div className="bglinearcircle lg:h-16 h-10 lg:w-16 w-10 rounded-full absolute bottom-0 lg:left-6 md:left-1 left-5"></div>
+                  <div className=" top-[-16%] overflow-hidden md:left-[25%] left-[20%] relative z-10 w-[90%]">
+                    <Image
+                    src={Feliz}
+                    alt="Feliz"
+                    className="z-40 w-[175px] lg:w-[232px] "
+                      // width={232}
+                      // height={232}
+                    priority
+                    />
+                    <div className="bglinearcircle lg:h-16 h-10 lg:w-16 w-10 rounded-full absolute top-2 right-14"></div>
+                    <div className="bg-[#FF5722] lg:h-10 h-6 lg:w-10 w-6 rounded-full  absolute bottom-20 blur-sm lg:right-4 right-2"></div>
+                    <div className="bg-[#FF5722] md:h-6  md:w-6 hidden lg:block rounded-full absolute top-40 blur-sm right-12"></div>
+                    <div className="bg-[#FACD49] lg:h-8 h-4 lg:w-8 w-4  rounded-full absolute top-24 lg:right-0 right-4"></div>
+
+                  </div>
+      </div>
+
+
+    <div className="lg:w-[60%] mt-12 md:mt-0 ">
+      <h2 className="text-[#F85E9F] text-[15px] font-semibold my-2">WE ARE THE BEST FOR YOU</h2>
+      <h1 className="font-semibold text-[30px] my-2">Unlock Your Dream Destination</h1>
+      <small className="textcolor">We are dedicated to making your journey of discovery truly unforgettable. Our team of passionate travel experts is here to assist you in finding the destination of your dreams.</small>
+      <div className="grid grid-cols-2 justify-between items-center my-6 gap-6">
+        <div className="border-[1px] border-[lightgray] text-center rounded-2xl p-2">
+          <h2 className="text-[#F85E9F] text-[20px] font-bold mb-2">4K+</h2>
+          <small>Satisfied Customers</small>
+        </div>
+        <div className="border-[1px] border-[lightgray] text-center rounded-2xl p-2">
+          <h2 className="text-[#F85E9F] text-[20px] font-bold mb-2">1000+</h2>
+          <small>Global Destinations</small>
+        </div>
+        <div className="border-[1px] border-[lightgray] text-center rounded-2xl p-2">
+          <h2 className="text-[#F85E9F] text-[20px] font-bold mb-2">24/7</h2>
+          <small>Customer Support</small>
+        </div>
+        <div className="border-[1px] border-[lightgray] text-center rounded-2xl p-2">
+          <h2 className="text-[#F85E9F] text-[20px] font-bold mb-2">100%</h2>
+          <small>Dedication</small>
+        </div>
+      </div>
+      </div>        
+    </div>
+    </div>
+
 
     </div>
   );
