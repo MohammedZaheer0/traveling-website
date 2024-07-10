@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import Vector from '@/public/assets/Vector.png';
 import { IoBagHandle } from "react-icons/io5";
@@ -11,13 +12,39 @@ import { FaLocationDot } from "react-icons/fa6";
 import TravelAnywhere from '@/public/assets/Travel anywhere in the world with a suitcase.png';
 import Card from '@/public/assets/card.png';
 import YellowPaper from '@/public/assets/yellow paper airplane.png';
-import Feliz from '@/public/assets/feliz-mulher-africana-sentada-com-mala-isolada-em-fundo-amarelo(1)-transformed 1.png'
-
+import Feliz from '@/public/assets/feliz-mulher-africana-sentada-com-mala-isolada-em-fundo-amarelo(1)-transformed 1.png';
+import Link from "next/link";
+import Homem from '../public/assets/homem-de-ferias-com-uma-grande-mala-amarela-se-sentindo-feliz-no-azul-transformed 1.png'
 
 import Destinations from "./destination/page";
-
+import FilterData from './filterdata/page';
+import React,{useState} from "react";
+import TourImg from '@/public/assets/Rectangle 1446.png';
+import LocationImg from '@/public/assets/Group.png';
+import Thumb from '@/public/assets/thumb.png';
+import Heart from '@/public/assets/heart.png';
+import Letter from '@/public/assets/letter.png';
+import MessageIcon from '@/public/assets/MessageIcon.png';
+import RightVictor from '@/public/assets/rightVector.png';
+import LeftVictor from '@/public/assets/leftVector.png';
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { PiInstagramLogoFill } from "react-icons/pi";
+import { FaLinkedin } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { RiMessage2Line } from "react-icons/ri";
+import { MdOutlineAddIcCall } from "react-icons/md";
+import { IoLocationOutline } from "react-icons/io5";
 
 export default function Home() {
+
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const handleCategoryClick = (category: string) => {
+    console.log('Category clicked:', category);
+    setSelectedCategory(category);
+  }
+ 
   return (
     <div className="parent">
 
@@ -45,8 +72,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-[100%] mt-[30px] sm:mt-[40px] lg:mt-[30px]">
-            <Travel presonImg={Menina} earthImg={Layer} vectorLine={Vector1} MdCellTower={MdCellTower} FaLocationDot={FaLocationDot}/>
+          <div className="w-[100%] mx-auto mt-[30px] sm:mt-[40px] lg:mt-[30px]">
+            <Travel 
+            presonImg={Menina} 
+            earthImg={Layer} 
+            vectorLine={Vector1} 
+            MdCellTower={MdCellTower} 
+            FaLocationDot={FaLocationDot} 
+            lastTest='Top Hotels'
+            presonImgSize={{ width: 450, height: 450 }}
+            />
           </div>
         </div>
         <div className="my-10 md:w-[90%] w-[100%] mx-auto cursor-pointer">
@@ -56,9 +91,6 @@ export default function Home() {
           />
         </div>
     </div>
-
-
-
 
 
 
@@ -105,12 +137,16 @@ export default function Home() {
     </div>
 
 
-    <div className="md:w-[90%] w-[95%] mx-auto my-5">
+    {/* choose your next destination */}
+
+    <div className="md:w-[90%] w-[90%] mx-auto my-5">
       <h3 className="text-[#F85E9F]  font-semibold text-[15px]">CHOOSE YOUR NEXT DESTINATION</h3>
       <h2 className="font-semibold text-[30px] mt-2">Explore top destination</h2>
       <Destinations/>
     </div>
 
+
+    {/* We Are The Best For  You */}
 
     <div className="xl:mt-[150px] mt-[100px]  mb-10 w-[90%] mx-auto">
       <div className="grid md:grid-cols-[60%_40%] grid-cols-1 justify-between items-center">
@@ -141,24 +177,250 @@ export default function Home() {
       <small className="textcolor">We are dedicated to making your journey of discovery truly unforgettable. Our team of passionate travel experts is here to assist you in finding the destination of your dreams.</small>
       <div className="grid grid-cols-2 justify-between items-center my-6 gap-6">
         <div className="border-[1px] border-[lightgray] text-center rounded-2xl p-2">
-          <h2 className="text-[#F85E9F] text-[20px] font-bold mb-2">4K+</h2>
+          <h2 className="text-[#F85E9F] text-[25px] font-bold mb-2">4K+</h2>
           <small>Satisfied Customers</small>
         </div>
         <div className="border-[1px] border-[lightgray] text-center rounded-2xl p-2">
-          <h2 className="text-[#F85E9F] text-[20px] font-bold mb-2">1000+</h2>
+          <h2 className="text-[#F85E9F] text-[25px] font-bold mb-2">1000+</h2>
           <small>Global Destinations</small>
         </div>
         <div className="border-[1px] border-[lightgray] text-center rounded-2xl p-2">
-          <h2 className="text-[#F85E9F] text-[20px] font-bold mb-2">24/7</h2>
+          <h2 className="text-[#F85E9F] text-[25px] font-bold mb-2">24/7</h2>
           <small>Customer Support</small>
         </div>
         <div className="border-[1px] border-[lightgray] text-center rounded-2xl p-2">
-          <h2 className="text-[#F85E9F] text-[20px] font-bold mb-2">100%</h2>
+          <h2 className="text-[#F85E9F] text-[25px] font-bold mb-2">100%</h2>
           <small>Dedication</small>
         </div>
       </div>
       </div>        
     </div>
+    </div>
+
+
+
+
+    {/* Top Destinations */}
+      <div id="destinations" className="my-10 md:w-[90%] mx-auto">
+        <h2 className="text-[#F85E9F] text-[15px] font-semibold px-4 md:px-0">TOP DESTINATION</h2>
+        <div className="grid lg:grid-cols-2 mx-auto px-4 md:px-0 grid-cols-1 justify-between my-4 items-center">
+          <h1 className="text-[30px] font-semibold">Explore top destination</h1>
+          <div className="grid md:grid-cols-5 grid-cols-3 place-items-start md:justify-between text-[15px] font-medium my-3 md:my-0 md:mt-4 lg:mt-0">
+              <button onClick={() => handleCategoryClick('beauty')}>Beauty</button>
+              <button onClick={() => handleCategoryClick('fragrances')} className="textcolor" >Fragrances</button>
+              <button onClick={() => handleCategoryClick('furniture')} className="textcolor" >Furniture</button>
+              <button onClick={() => handleCategoryClick('groceries')} className="textcolor my-2 md:my-0" >Groceries</button>
+              <button onClick={() => handleCategoryClick('all')} className="text-[#F85E9F] underline my-2 md:my-0">See all</button>
+          </div>    
+        </div>
+        <FilterData category={selectedCategory}/>
+      </div>
+
+
+
+
+      {/* Our Experience */}
+      <div id="packages" className="w-[90%] mx-auto grid md:grid-cols-[40%_60%] lg:grid-cols-2 items-center grid-cols-1 justify-between mt-[50px] md:mt-[150px] mb-14">
+        <div>
+        <h2 className="text-[#F85E9F] text-[15px] font-semibold  my-3">OUR EXPERIENCE</h2>
+        <h1 className="text-[35px] font-semibold">Crafting  <br /> Unforgettable <br /> Adventures</h1>
+        <p className="textcolor md:w-[80%] my-4">We excel in curating remarkable journeys, specializing in outdoor destinations around the globe. With a wealth of experience, we bring adventures to life and invite you to  embark on your own. The call of nature awaits—begin  your adventure today!</p>
+        
+        <div className="my-4 grid grid-cols-3 items-center justify-around">
+          <div className="">
+            <h2 className="text-[#F85E9F] text-[25px] font-bold">1,000+</h2>
+            <p className="text-[15px] textcolor">outdoor <br /> destinations</p>
+          </div>
+          <div>
+            <h2 className="text-[#F85E9F] text-[25px] font-bold">98%</h2>
+            <p className="text-[15px] textcolor">customer <br /> satisfaction</p>
+          </div>
+          <div>
+            <h2 className="text-[#F85E9F] text-[25px] font-bold">15+</h2>
+            <p className="text-[15px] textcolor">Years Of <br /> Experience</p>
+          </div>
+        </div>
+        </div>
+
+        <div className="earthbackground mx-auto -z-50 mt-[80px] md:mt-0">
+                  <div className="bgimage top-[-18%] relative z-10">
+                    <Image
+                    src={Homem}
+                    alt="Homem"
+                    className="z-40 md:w-[390px] w-[260px]"
+                    priority
+                    />
+                    <Image
+                    src={Layer}
+                    alt="Layer"
+                    className="absolute top-[20%]  -z-10 earthimage w-full h-auto"
+                    priority
+                    />
+                    <Image
+                    src={Vector1}
+                    alt="Vector1"
+                    className="absolute top-[25%] md:-left-16 -left-2  -z-10"
+                    priority
+                    />
+
+                    <button className="bg-white md:p-4 py-2 shadow-2xl rounded-md flex items-center absolute top-[40%] xl:-right-[20%] md:-right-[30%] -right-[0%]">
+                    <MdCellTower className="text-[#FACD49] md:text-xl md:mr-2"/>
+                    <div className="">
+                      <p className="text-[#5D50C6] text-[10px] md:text-[15px] font-bold">5000+</p>
+                      <p className="text-[#5B5F62] md:text-[12px] text-[10px]">Customers</p>
+                    </div>
+                    </button>
+                    
+                    <button className="bg-white md:p-4 p-2 shadow-2xl rounded-full flex items-center absolute top-[70%] md:-left-[16%] -left-[5%]">
+                    <FaLocationDot className="text-[#FACD49] md:text-xl md:mr-2 mr-1"/>
+                    <div className="">
+                      <p className="md:text-[12px] text-[10px] text-[#393E46] font-bold">Top Places</p>
+                    </div>
+                    </button>
+
+                    <button className="bg-white md:p-4 p-2 shadow-2xl rounded-full flex items-center absolute top-[80%] md:-right-[10%] -right-[0%]">
+                    <FaLocationDot className="text-[#FACD49] md:text-xl md:mr-2 mr-1"/>
+                    <div className="">
+                      <p className="md:text-[12px] text-[10px] text-[#393E46] font-bold">Best Adventures</p>
+                    </div>
+                    </button>
+
+                  </div>
+            </div>
+      </div>
+
+
+      {/* Meet Our Expert Tour Guides */}
+      <div id="blog" className="grid md:grid-cols-2 grid-cols-1 justify-between items-center w-[90%] mx-auto my-14">
+        <div className="md:w-[80%]">
+          <h1 className="text-[30px] font-bold my-2">Meet Our Expert Tour <br />Guides</h1>
+          <p className="textcolor md:w-[90%]">Our journeys are enriched by our team of seasoned tour guides. Our guides bring your adventures to life with their expertise, passion</p>
+
+          <div className="relative mt-14">
+
+            <div className="absolute lg:left-10 left-5 md:top-5 top-3 w-fit">
+              <button className="flex gap-2 items-center bg-[#add8e6e1] py-1 px-3 rounded-full text-[14px] text-white w-fit"><Image src={LocationImg} alt="" /> Gramado, Brazil</button>
+            </div>
+
+            <Image src={TourImg} alt="TourImg"/>
+
+            <div className="bglinearcircle lg:h-16 h-8 lg:w-16 w-8 rounded-full absolute bottom-14 lg:left-0 md:left-1 left-5"></div>
+            <div className="bg-[#FACD49] lg:h-8 h-4 lg:w-8 w-4 hidden xl:block rounded-full absolute bottom-24 lg:-right-2 right-4"></div>
+            <div className="bglinearcircle lg:h-16 h-8 lg:w-16 w-8 rounded-full absolute -top-12 right-0"></div>
+          </div>
+
+        </div>
+
+
+        <div className="">
+
+          <div className="flex justify-between items-center lg:gap-10 gap-2 my-10">
+            <Image src={Thumb} alt="Thumb" className="w-[50px] md:w-[80px]"/>
+            <div className="w-[80%] mx-auto">
+              <h2 className="font-bold text-[20px] my-4">Expertise</h2>
+              <p className="textcolor">Our guides are experts in their fields, ensuring in-depth knowledge and insights into every destination.</p>
+            </div>
+          </div>
+         
+          <div className="flex justify-between items-center lg:gap-10 gap-2 my-10">
+            <Image src={Heart} alt="Heart" className="w-[50px] md:w-[80px]"/>
+            <div className="w-[80%] mx-auto">
+              <h2 className="font-bold text-[20px] my-4">Passion</h2>
+              <p className="textcolor">They are passionate about travel, culture, and history, making your journey engaging and captivating.</p>
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center lg:gap-10 gap-2 my-10">
+            <Image src={Letter} alt="Letter" className="w-[50px] md:w-[80px]"/>
+            <div className="w-[80%] mx-auto">
+              <h2 className="font-bold text-[20px] my-4">Dedication</h2>
+              <p className="textcolor">Our guides are dedicated to providing exceptional service and ensuring your travel memories are truly unforgettable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      {/* Sign Up to our newsletter */}
+      <div className="md:w-[90%] w-[90%] px-4 md:px-0 mx-auto bg-[#FACD49] lg:my-24 my-10 flex flex-col md:justify-center md:items-center relative md:py-16 py-10 rounded-3xl overflow-hidden">
+        <h1 className="font-bold text-[25px]">Sign Up To Our Newsletter</h1>
+        <p className="textcolor md:w-[50%] my-2 mx-auto md:text-center">Lorem ipsum dolor sit amet consectetur. Egestas et feugiat purus enim facilisi nunc blandit nullam.</p>
+        <div className="lg:flex absolute justify-between hidden items-center w-[95%] py-2 mx-auto">
+        <Image src={LeftVictor} alt="LeftVictor" className=""/>
+        <Image src={RightVictor} alt="RightVictor" className=""/>
+        </div>
+        <div className="my-4 flex gap-5 bg-white rounded-xl justify-around items-center md:px-4">
+          <input type="text" placeholder="Enter Your email address" className="outline-none border-none "/>
+          <Image src={MessageIcon} alt="MessageIcon" className=""/>
+        </div>
+      </div>
+
+
+    {/* About Us */}
+    <div id="contactus" className="grid  lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 text-center md:text-left my-16 w-[90%] mx-auto lg:gap-5 gap-2 ">
+
+        <div className="my-4 md:my-0 text-[#6F6C90]">
+        <h2 className="travlogtitle mb-4">Travlog</h2>
+        <p className="textcolor text-[15px] my-2">Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam</p>
+        <div className="flex gap-5 items-center text-[#F95F9F] my-5 text-[20px] cursor-pointer justify-center md:justify-start">
+        <FaFacebookF/>
+        <FaTwitter/>
+        <PiInstagramLogoFill/>
+        <FaLinkedin/>
+        <FaYoutube/>
+        </div>
+      </div>
+      
+      <div className="my-4 md:my-0 text-[#6F6C90]">
+        <h2 className="text-[20px] font-bold text-[#170F49] mb-4">Product</h2>
+        <p className="textcolor text-[15px] my-2">Features</p>
+        <p className="textcolor text-[15px] my-2">Pricing</p>
+        <p className="textcolor text-[15px] my-2">Case studies</p>
+        <p className="textcolor text-[15px] my-2">Reviews</p>
+        <p className="textcolor text-[15px] my-2">Updates</p>
+      </div>
+
+      <div className="my-4 md:my-0 text-[#6F6C90]">
+        <h2 className="text-[20px] font-bold text-[#170F49] mb-4">Company</h2>
+        <p className="textcolor text-[15px] my-2">About</p>
+        <p className="textcolor text-[15px] my-2">Contact us</p>
+        <p className="textcolor text-[15px] my-2">Careers</p>
+        <p className="textcolor text-[15px] my-2">Culture</p>
+        <p className="textcolor text-[15px] my-2">Blog</p>
+      </div>
+
+
+      <div className="my-4 md:my-0 text-[#6F6C90]">
+        <h2 className="text-[20px] font-bold text-[#170F49] mb-4">Support</h2>
+        <p className="textcolor text-[15px] my-2">Getting started</p>
+        <p className="textcolor text-[15px] my-2">Help center</p>
+        <p className="textcolor text-[15px] my-2">Server status</p>
+        <p className="textcolor text-[15px] my-2">Report a bug</p>
+        <p className="textcolor text-[15px] my-2">Chat support</p>
+      </div>
+
+
+      <div className="my-4 md:my-0 text-[#6F6C90]">
+        <h2 className="text-[20px] font-bold text-[#170F49] mb-4">Contacts us</h2>
+        <p className="textcolor text-[15px] my-2 flex gap-3 items-center justify-center md:justify-start"><RiMessage2Line/> contact@company.com</p>
+        <p className="textcolor text-[15px] my-2 flex gap-3 items-center justify-center md:justify-start"><MdOutlineAddIcCall/> (xx) xxxx-xxxx</p>
+        <p className="textcolor text-[15px] my-2 flex gap-3 items-center justify-center md:justify-start"><IoLocationOutline/> 794 Mcallister St <br /> San Francisco, 94102</p>
+      </div>
+
+
+      
+
+
+   
+    </div>
+
+
+
+    {/* Footer */}
+    <div className="grid md:flex text-center md:text-left grid-cols-1 justify-between items-center w-[90%] mx-auto my-5 border-t-2 pt-7 text-[#6F6C90]">
+      <p>Copy &#64; 2023</p>
+      <p>All Rights Reserved | <a href="#" className="text-[#4A3AFF] underline">Terms and Conditions</a> | <a href="#" className="text-[#4A3AFF] underline">Privacy Policy</a></p>
     </div>
 
 

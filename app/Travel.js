@@ -1,8 +1,7 @@
 import Image from 'next/image';
-
 import React from 'react'
 
-const Travel = ({presonImg,earthImg,vectorLine,MdCellTower,FaLocationDot}) => {
+const Travel = ({presonImg,earthImg,vectorLine,MdCellTower,FaLocationDot,lastTest,presonImgSize}) => {
   return (
     <div>
       <div className="earthbackground -z-50">
@@ -11,6 +10,8 @@ const Travel = ({presonImg,earthImg,vectorLine,MdCellTower,FaLocationDot}) => {
                     src={presonImg}
                     alt="presonImg"
                     className="z-40"
+                    width={presonImgSize.width}
+                    height={presonImgSize.height}
                     priority
                     />
                     <Image
@@ -44,7 +45,7 @@ const Travel = ({presonImg,earthImg,vectorLine,MdCellTower,FaLocationDot}) => {
                     <button className="bg-white md:p-4 p-2 shadow-2xl rounded-full flex items-center absolute top-[80%] md:-right-[10%] -right-[0%]">
                     <FaLocationDot className="text-[#FACD49] md:text-xl md:mr-2 mr-1"/>
                     <div className="">
-                      <p className="md:text-[12px] text-[10px] text-[#393E46] font-bold">Top Hotels</p>
+                      <p className="md:text-[12px] text-[10px] text-[#393E46] font-bold">{lastTest}</p>
                     </div>
                     </button>
 

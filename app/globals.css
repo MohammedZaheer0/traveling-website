@@ -6,7 +6,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 .travlogtitle{
     background-image: linear-gradient(#5D50C6,#F85E9F);
     -webkit-background-clip: text;
@@ -21,7 +20,7 @@ html {
     width: 450px;
     height: 450px;
     border-radius: 50%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     background-color: rgb(12, 155, 238);
 }
  .earthimage{
@@ -38,6 +37,7 @@ html {
  .textcolor{
     color: rgba(25, 24, 37, 0.75);
  }
+
 
  @media only screen and (max-width:1024px) {
     .earthbackground{
