@@ -14,8 +14,7 @@ import Card from '@/public/assets/card.png';
 import YellowPaper from '@/public/assets/yellow paper airplane.png';
 import Feliz from '@/public/assets/feliz-mulher-africana-sentada-com-mala-isolada-em-fundo-amarelo(1)-transformed 1.png';
 import Link from "next/link";
-import Homem from '../public/assets/homem-de-ferias-com-uma-grande-mala-amarela-se-sentindo-feliz-no-azul-transformed 1.png'
-
+import Homem from '../public/assets/homem-de-ferias-com-uma-grande-mala-amarela-se-sentindo-feliz-no-azul-transformed 1.png';
 import Destinations from "./destination/page";
 import FilterData from './filterdata/page';
 import React,{useState} from "react";
@@ -138,13 +137,11 @@ export default function Home() {
 
 
     {/* choose your next destination */}
-
-    <div className="md:w-[90%] w-[90%] mx-auto my-5">
-      <h3 className="text-[#F85E9F]  font-semibold text-[15px]">CHOOSE YOUR NEXT DESTINATION</h3>
-      <h2 className="font-semibold text-[30px] mt-2">Explore top destination</h2>
-      <Destinations/>
+    <div>
+    <Destinations/>
     </div>
 
+    
 
     {/* We Are The Best For  You */}
 
