@@ -36,9 +36,9 @@ const Destinations = () => {
   return (
     <div className="md:w-[90%] w-[90%] mx-auto my-5">
     <h3 className="text-[#F85E9F]  font-semibold text-[15px]">CHOOSE YOUR NEXT DESTINATION</h3>
-    <div className="grid grid-cols-2 justify-between items-center">
+    <div className="grid md:grid-cols-2 grid-cols-1 justify-between items-center my-3">
       <h2 className="font-semibold text-[30px] mt-2">Explore top destination</h2>
-      <div className="flex justify-end gap-5 items-center">
+      <div className="flex justify-end gap-5 items-center mt-8 md:mt-0">
         <Image src={LeftArrow} alt="LeftArrow" className="cursor-pointer" onClick={() => swiperRef.current?.slidePrev()} />
         <Image src={RightArrow} alt="RightArrow" className="cursor-pointer" onClick={() => swiperRef.current?.slideNext()} />
       </div>
