@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import { Pagination, Autoplay } from 'swiper/modules';
 // import { Autoplay } from 'swiper/modules';
-import DestinationAPI from '../destinationApi/page';
+import DestinationCard from '../destinationApi/page';
 import RightArrow from '@/public/assets/rightarrow.png';
 import LeftArrow from '@/public/assets/leftarrow.png';
 import Image from 'next/image';
@@ -22,7 +22,6 @@ const Destinations = () => {
       try {
         const response = await axios.get('https://dummyjson.com/products');
         setDestinations(response.data.products);
-        console.log(response.data.products);
       } catch (error) {
         console.error('Error fetching destinations:', error);
       }
@@ -68,7 +67,7 @@ const Destinations = () => {
         >
           {destinations.map((destination) => (
             <SwiperSlide key={destination.id}>
-              <DestinationAPI destination={destination} />
+              <DestinationCard destination={destination} />
             </SwiperSlide>
           ))}
         </Swiper>

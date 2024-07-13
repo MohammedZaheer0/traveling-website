@@ -60,4 +60,5 @@ const FilterData = ({ category }) => {
 };
 
 export default FilterData;
+export {DestinationCard};
 
