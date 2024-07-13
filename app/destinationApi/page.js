@@ -1,9 +1,9 @@
-'use client';
+// 'use client';
 import React from 'react';
 import Image from 'next/image';
 import { FaStar } from "react-icons/fa";
 
-const DestinationCard = ({ destination }) => {
+const DestinationAPI= ({ destination }) => {
   return (
     <div className="destination-card mt-8 h-[590px] mb-2 relative rounded-lg  mx-auto">
       <Image src={destination.thumbnail} alt={destination.title} width={300} height={200} className=''/>
@@ -19,4 +19,4 @@ const DestinationCard = ({ destination }) => {
   );
 };
 
-export default DestinationCard;
+export default DestinationAPI;

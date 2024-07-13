@@ -27,7 +27,7 @@ const Travel = ({presonImg,earthImg,vectorLine,MdCellTower,FaLocationDot,lastTes
                     priority
                     />
 
-                    <button className="bg-white md:p-4 py-2 shadow-2xl rounded-md flex items-center absolute top-[40%] xl:-right-[20%] md:-right-[30%] -right-[0%]">
+                    <button className="bg-white md:p-4 py-2 shadow-2xl rounded-md flex items-center absolute top-[40%] xl:-right-[20%] md:-right-[15%] -right-[0%]">
                     <MdCellTower className="text-[#FACD49] md:text-xl md:mr-2"/>
                     <div className="">
                       <p className="text-[#5D50C6] text-[10px] md:text-[15px] font-bold">5000+</p>

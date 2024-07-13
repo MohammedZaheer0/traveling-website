@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import { Pagination, Autoplay } from 'swiper/modules';
 // import { Autoplay } from 'swiper/modules';
-import DestinationCard from '../destinationApi/page';
+import DestinationAPI from '../destinationApi/page';
 import RightArrow from '@/public/assets/rightarrow.png';
 import LeftArrow from '@/public/assets/leftarrow.png';
 import Image from 'next/image';
@@ -68,7 +68,7 @@ const Destinations = () => {
         >
           {destinations.map((destination) => (
             <SwiperSlide key={destination.id}>
-              <DestinationCard destination={destination} />
+              <DestinationAPI destination={destination} />
             </SwiperSlide>
           ))}
         </Swiper>

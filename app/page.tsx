@@ -13,7 +13,7 @@ import TravelAnywhere from '@/public/assets/Travel anywhere in the world with a 
 import Card from '@/public/assets/card.png';
 import YellowPaper from '@/public/assets/yellow paper airplane.png';
 import Feliz from '@/public/assets/feliz-mulher-africana-sentada-com-mala-isolada-em-fundo-amarelo(1)-transformed 1.png';
-import Link from "next/link";
+// import Link from "next/link";
 import Homem from '../public/assets/homem-de-ferias-com-uma-grande-mala-amarela-se-sentindo-feliz-no-azul-transformed 1.png';
 import Destinations from "./destination/page";
 import FilterData from './filterdata/page';
@@ -49,14 +49,14 @@ export default function Home() {
 
     {/* Home Div */}
     <div id="home" className="xl:mt-[12%] mt-[25%] sm:mt-[15%] lg:mt-[15%] mb-5">
-        <div className="grid lg:grid-cols-2 grid-cols-1 w-[90%] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto">
           <div className="mb-16 lg:mb-1">
               <button className="flex items-center border-[1px] border-[lightgray] text-[#F85E9F] shadow-sm py-3 px-5 rounded-full mb-5"><p>Explore the world!</p> <IoBagHandle className=" ml-2"/></button>
               <h1 className="xl:text-6xl lg:text-5xl text-4xl font-medium my-5">Travel <span className="text-[#F85E9F]">top <br /> destination</span>  <br />
               of the world</h1>
 
-              <p className="text-[14px] my-3 textcolor lg:w-[90%]">Where adventure meets comfort. We create unforgettable travel experiences</p>
-            <div className="flex my-6">
+              <p className="text-[14px] my-3 textcolor md:w-[70%]">Where adventure meets comfort. We create unforgettable travel experiences</p>
+            <div className="flex my-6 md:w-[80%]">
             <button className='text-[13px] font-medium bg-[#5D50C6] shadow-xl text-white py-3 px-8 rounded-full mr-4'>Get Started</button>
             <button className='border-[1px] border-[lightgray] py-3 px-8 rounded-full flex items-center'>
               <Image
