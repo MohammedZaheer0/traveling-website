@@ -22,7 +22,7 @@ const Navbar = () => {
           <h2 className='travlogtitle cursor-pointer' onClick={() => { router.push('/') }}>Travlog</h2>
         </div>
 
-        <ul className='justify-between text-[#7f8185] font-medium hidden lg:flex'>
+        <ul className='justify-between text-[#7f8185] font-medium hidden lg:flex cursor-pointer'>
 
           {/* <Link href='#home' scroll={false} className='hover:text-[#000]'> */}
             <li className={pathname === '#home' ? 'active' : ''}  onClick={() => {router.push('#home')}}>Home</li>
