@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FaStar } from "react-icons/fa";
 
 const DestinationCard = ({ destination }) => {
+  if (!destination) return null; 
   return (
     <div className="destination-card md:mt-6 mt-3 h-[590px] mb-2 relative rounded-lg w-full mx-auto">
       <Image src={destination.thumbnail} alt={destination.title} width={300} height={200} className='' />
