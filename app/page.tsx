@@ -58,7 +58,7 @@ export default function Home() {
 
               <p className="text-[14px] my-3 textcolor md:w-[70%]">Where adventure meets comfort. We create unforgettable travel experiences</p>
             <div className="flex my-6 md:w-[80%]">
-            <button className='text-[13px] font-medium bg-[#5D50C6] shadow-xl text-white py-3 px-8 rounded-full mr-4'>Get Started</button>
+            <button className='text-[13px] font-medium bg-[#5D50C6] hover:bg-[#8179c0] shadow-xl text-white py-3 px-8 rounded-full mr-4'>Get Started</button>
             <button className='border-[1px] border-[lightgray] py-3 px-8 rounded-full flex items-center'>
               <Image
               src={Vector}

@@ -19,7 +19,7 @@ const Navbar = () => {
     <div className=''>
       <div className='lg:w-[95%] w-[100%] xl:w-[90%] mx-auto lg:grid-cols-[15%_55%_20%] xl:grid-cols-[15%_45%_20%] justify-between items-center p-4 grid  fixed top-0 left-0 right-0 mb-7 bg-white z-[999]'>
         <div className='inline lg:pl-[0px] pl-[15px] sm:pl-[20px]'>
-          <h2 className='travlogtitle' onClick={() => { router.push('#home') }}>Travlog</h2>
+          <h2 className='travlogtitle cursor-pointer' onClick={() => { router.push('/') }}>Travlog</h2>
         </div>
 
         <ul className='justify-between text-[#7f8185] font-medium hidden lg:flex'>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
           <div className='items-center font-medium text-[15px] justify-center flex'>
             <button onClick={() => { router.push('/login') }} className='mx-10'>Login</button>
-            <button onClick={() => { router.push('/signup') }} className='bg-[#5D50C6] text-white py-3 px-8 rounded-full'>Sign Up</button>
+            <button onClick={() => { router.push('/signup') }} className='bg-[#5D50C6] text-white py-3 px-8 rounded-full hover:bg-[#a59edd]'>Sign Up</button>
           </div>
           
         </div>
