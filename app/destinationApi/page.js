@@ -42,8 +42,8 @@ const DestinationAPI = ({ destination }) => {
   }
 
   return (
-    <div className="destination-card mt-8 h-[590px] mb-2 relative rounded-lg  mx-auto">
-      <Image src={destination.thumbnail} alt={destination.title} width={300} height={200} className=''/>
+    <div className="destination-card mt-8 h-[590px] mb-2 relative rounded-lg mx-auto">
+      <Image src={destination.thumbnail} alt={destination.title} width={300} height={200} className='' />
       <h1 className='font-bold my-4 text-[20px] text-left'>{destination.title}</h1>
       <p className='text-left text-[13px]'>{destination.description}</p>
       <h3 className='text-[13px] font-medium text-left my-3'>Warranty Information: {destination.warrantyInformation}</h3>
@@ -52,7 +52,7 @@ const DestinationAPI = ({ destination }) => {
       </span>
       <div className='flex justify-between items-center gap-2 mt-4'>
         <span>Price: <span className='text-red-600 font-medium'>{destination.price}</span></span>
-        <button className='text-white px-4 py-2 rounded-full text-[15px]  seemorebg'>See More</button>
+        <button className='text-white px-4 py-2 rounded-full text-[15px] seemorebg'>See More</button>
       </div>
     </div>
   );
@@ -70,3 +70,4 @@ DestinationAPI.propTypes = {
 };
 
 export default DestinationAPI;
+
