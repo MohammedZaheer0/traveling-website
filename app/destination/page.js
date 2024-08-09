@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import DestinationAPI from '../destinationApi/page';
+import DestinationAPI from '../destinationApi/page'; // Ensure this path is correct
 import RightArrow from '@/public/assets/rightarrow.png';
 import LeftArrow from '@/public/assets/leftarrow.png';
 import Image from 'next/image';
@@ -32,8 +32,18 @@ const Destinations = () => {
       <div className="grid md:grid-cols-2 grid-cols-1 justify-between items-center my-3">
         <h2 className="font-semibold text-[30px] mt-2">Explore top destination</h2>
         <div className="flex justify-end gap-5 items-center mt-8 md:mt-0">
-          <Image src={LeftArrow} alt="LeftArrow" className="cursor-pointer" onClick={() => swiperRef.current?.slidePrev()} />
-          <Image src={RightArrow} alt="RightArrow" className="cursor-pointer" onClick={() => swiperRef.current?.slideNext()} />
+          <Image
+            src={LeftArrow}
+            alt="LeftArrow"
+            className="cursor-pointer"
+            onClick={() => swiperRef.current?.slidePrev()}
+          />
+          <Image
+            src={RightArrow}
+            alt="RightArrow"
+            className="cursor-pointer"
+            onClick={() => swiperRef.current?.slideNext()}
+          />
         </div>
       </div>
       <div className="destinations">

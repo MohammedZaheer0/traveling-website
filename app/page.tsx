@@ -50,7 +50,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const handleCategoryClick = (category: string) => {
-    console.log('Category clicked:', category);
+    // console.log('Category clicked:', category);
     setSelectedCategory(category);
   }
 
