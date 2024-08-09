@@ -1,10 +1,14 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
+import gsap from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
+gsap.registerPlugin(TextPlugin);
+
 
 const Navbar = () => {
   const router = useRouter();
@@ -15,11 +19,27 @@ const Navbar = () => {
     setIsClick(!isClick);
   }
 
+  
+
+  useEffect(() => {
+    gsap.to("#navtitle", {
+      duration: 1.5,
+      backgroundImage: "linear-gradient(#5D50C6, #F85E9F)",
+      text: "Travlog",
+      ease: "power2.out",
+      repeat: 2, 
+      // repeatDelay: 1, 
+      ease: "none",
+      yoyo:true
+    });
+  }, []);
+  
+
   return (
     <div className=''>
       <div className='lg:w-[95%] w-[100%] xl:w-[90%] mx-auto lg:grid-cols-[15%_55%_20%] xl:grid-cols-[15%_45%_20%] justify-between items-center p-4 grid  fixed top-0 left-0 right-0 mb-7 bg-white z-[999]'>
         <div className='inline lg:pl-[0px] pl-[15px] sm:pl-[20px]'>
-          <h2 className='travlogtitle cursor-pointer' onClick={() => { router.push('/') }}>Travlog</h2>
+          <h2 id='navtitle' className='travlogtitle cursor-pointer' onClick={() => { router.push('/') }}></h2>
         </div>
 
         <ul className='justify-between text-[#7f8185] font-medium hidden lg:flex cursor-pointer'>

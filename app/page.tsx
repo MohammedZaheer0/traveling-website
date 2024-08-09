@@ -18,7 +18,15 @@ import Homem from '../public/assets/homem-de-ferias-com-uma-grande-mala-amarela-
 // import Destinations from "./destination/page";
 import Destinations from '../app/destination/page';
 import FilterData from './filterdata/page';
-import React,{useState} from "react";
+
+import React,{useEffect, useRef, useState} from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {TextPlugin} from "gsap/TextPlugin";
+gsap.registerPlugin(ScrollTrigger) ;
+gsap.registerPlugin(TextPlugin);
+
 import TourImg from '@/public/assets/Rectangle 1446.png';
 import LocationImg from '@/public/assets/Group.png';
 import Thumb from '@/public/assets/thumb.png';
@@ -36,6 +44,7 @@ import { RiMessage2Line } from "react-icons/ri";
 import { MdOutlineAddIcCall } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 
+
 export default function Home() {
 
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -44,6 +53,59 @@ export default function Home() {
     console.log('Category clicked:', category);
     setSelectedCategory(category);
   }
+
+  const bestforyou = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".upper-bestforyou",
+      { x: -200, opacity: 0 }, // Start from the left side
+      {
+        x: 0,
+        opacity: 1,
+        duration: 4,
+        scrollTrigger: {
+          trigger: ".upper-bestforyou",
+          start: "top center",
+          scrub: 1,
+        },
+      }
+    );
+
+
+    gsap.fromTo(
+      ".bottom-bestforyou",
+      { x: 200, opacity: 0 }, // Start from the right side
+      {
+        x: 0,
+        opacity: 1,
+        duration: 4,
+        scrollTrigger: {
+          trigger: ".bottom-bestforyou",
+          start: "top center",
+          scrub: 1,
+        },
+      }
+    );
+
+
+
+
+
+
+    gsap.to("#heading1",{
+      duration:2,
+      delay:2,
+      color:"#F85E9F",
+      text:"best <br> spot of"
+    })
+    gsap.to("#signup",{
+      duration:3,
+      delay:1,
+      repeat:-1,
+      text:"To Our Newsletter"
+    })
+  },[])
  
   return (
     <div className="parent">
@@ -53,8 +115,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto">
           <div className="mb-16 lg:mb-1">
               <button className="flex items-center border-[1px] border-[lightgray] text-[#F85E9F] shadow-sm py-3 px-5 rounded-full mb-5"><p>Explore the world!</p> <IoBagHandle className=" ml-2"/></button>
-              <h1 className="xl:text-6xl lg:text-5xl text-4xl font-medium my-5">Travel <span className="text-[#F85E9F]">top <br /> destination</span>  <br />
-              of the world</h1>
+              <h1 className="xl:text-6xl lg:text-5xl text-4xl font-medium my-5">Travel <span id="heading1" className="text-[#F85E9F]">top <br /> destination</span>  <br />
+               the world</h1>
 
               <p className="text-[14px] my-3 textcolor md:w-[70%]">Where adventure meets comfort. We create unforgettable travel experiences</p>
             <div className="flex my-6 md:w-[80%]">
@@ -84,6 +146,7 @@ export default function Home() {
             />
           </div>
         </div>
+        
         <div className="my-10 md:w-[90%] w-[100%] mx-auto cursor-pointer">
           <Image
           src={Frame80}
@@ -149,7 +212,7 @@ export default function Home() {
     <div className="xl:mt-[150px] mt-[100px]  mb-10 w-[90%] mx-auto">
       <div className="grid md:grid-cols-[60%_40%] grid-cols-1 justify-between items-center">
 
-    <div className="earthbackgroundyellow -z-50 relative  md:mb-2">
+    <div className="upper-bestforyou earthbackgroundyellow -z-50 relative  md:mb-2">
                   <div className="bglinearcircle lg:h-16 h-10 lg:w-16 w-10 rounded-full absolute bottom-0 lg:left-6 md:left-1 left-5"></div>
                   <div className=" top-[-16%] overflow-hidden md:left-[25%] left-[20%] relative z-10 w-[90%]">
                     <Image
@@ -169,7 +232,7 @@ export default function Home() {
       </div>
 
 
-    <div className="lg:w-[60%] mt-12 md:mt-0 ">
+    <div className="bottom-bestforyou lg:w-[60%] mt-12 md:mt-0 ">
       <h2 className="text-[#F85E9F] text-[15px] font-semibold my-2">WE ARE THE BEST FOR YOU</h2>
       <h1 className="font-semibold text-[30px] my-2">Unlock Your Dream Destination</h1>
       <small className="textcolor">We are dedicated to making your journey of discovery truly unforgettable. Our team of passionate travel experts is here to assist you in finding the destination of your dreams.</small>
@@ -191,7 +254,8 @@ export default function Home() {
           <small>Dedication</small>
         </div>
       </div>
-      </div>        
+      </div> 
+
     </div>
     </div>
 
@@ -218,8 +282,9 @@ export default function Home() {
 
 
       {/* Our Experience */}
-      <div id="packages" className="w-[90%] mx-auto grid md:grid-cols-[40%_60%] lg:grid-cols-2 items-center grid-cols-1 justify-between mt-[50px] md:mt-[150px] mb-14">
-        <div>
+      <div id="packages" className=" w-[90%] mx-auto grid md:grid-cols-[40%_60%] lg:grid-cols-2 items-center grid-cols-1 justify-between mt-[50px] md:mt-[150px] mb-14">
+       
+        <div className="">
         <h2 className="text-[#F85E9F] text-[15px] font-semibold  my-3">OUR EXPERIENCE</h2>
         <h1 className="text-[35px] font-semibold">Crafting  <br /> Unforgettable <br /> Adventures</h1>
         <p className="textcolor md:w-[80%] my-4">We excel in curating remarkable journeys, specializing in outdoor destinations around the globe. With a wealth of experience, we bring adventures to life and invite you to  embark on your own. The call of nature awaits—begin  your adventure today!</p>
@@ -239,6 +304,8 @@ export default function Home() {
           </div>
         </div>
         </div>
+
+
 
         <div className="earthbackground mx-auto -z-50 mt-[80px] md:mt-0">
                   <div className="bgimage top-[-18%] relative z-10">
@@ -285,6 +352,7 @@ export default function Home() {
 
                   </div>
             </div>
+
       </div>
 
 
@@ -342,7 +410,7 @@ export default function Home() {
 
       {/* Sign Up to our newsletter */}
       <div className="md:w-[90%] w-[90%] px-4 md:px-0 mx-auto bg-[#FACD49] lg:my-24 my-10 flex flex-col md:justify-center md:items-center relative md:py-16 py-10 rounded-3xl overflow-hidden">
-        <h1 className="font-bold text-[25px]">Sign Up To Our Newsletter</h1>
+        <h1 className="font-bold text-[25px]">Sign Up <span id="signup"></span></h1>
         <p className="textcolor md:w-[50%] my-2 mx-auto md:text-center">Lorem ipsum dolor sit amet consectetur. Egestas et feugiat purus enim facilisi nunc blandit nullam.</p>
         <div className="lg:flex absolute justify-between hidden items-center w-[95%] py-2 mx-auto">
         <Image src={LeftVictor} alt="LeftVictor" className=""/>
