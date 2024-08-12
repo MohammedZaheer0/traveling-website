@@ -16,7 +16,7 @@ import Feliz from '@/public/assets/feliz-mulher-africana-sentada-com-mala-isolad
 // import Link from "next/link";
 import Homem from '../public/assets/homem-de-ferias-com-uma-grande-mala-amarela-se-sentindo-feliz-no-azul-transformed 1.png';
 // import Destinations from "./destination/page";
-import Destinations from '../app/destination/page';
+import Destinations from './destination/page';
 import FilterData from './filterdata/page';
 
 import React,{useEffect, useRef, useState} from "react";
