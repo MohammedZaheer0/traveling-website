@@ -15,7 +15,7 @@ const DestinationAPI = ({ destination }) => {
         alt={destination.title}
         width={300}
         height={200}
-        className=''
+        priority
       />
       <h1 className='font-bold my-4 text-[20px] text-left'>{destination.title}</h1>
       <p className='text-left text-[13px]'>{destination.description}</p>

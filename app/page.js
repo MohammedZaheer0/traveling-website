@@ -54,10 +54,14 @@ export default function Home() {
     setSelectedCategory(category);
   };
 
-  const bestforyou = useRef(null);
+  const homeleftdivh1 = useRef(null);
 
+  
   useEffect(() => {
-    gsap.fromTo(
+    const tl = gsap.timeline();
+
+
+    tl.fromTo(
       ".upper-bestforyou",
       { x: -200, opacity: 0 }, // Start from the left side
       {
@@ -73,13 +77,13 @@ export default function Home() {
     );
 
 
-    gsap.fromTo(
+    tl.fromTo(
       ".bottom-bestforyou",
       { x: 200, opacity: 0 }, // Start from the right side
       {
         x: 0,
         opacity: 1,
-        duration: 4,
+        duration: 3,
         scrollTrigger: {
           trigger: ".bottom-bestforyou",
           start: "top center",
@@ -90,16 +94,50 @@ export default function Home() {
 
 
 
-
-
-
-    gsap.to("#heading1",{
+    // Home
+    tl.to("#heading1",{
       duration:2,
       delay:2,
       color:"#F85E9F",
-      text:"best <br> spot of"
+      text:"best <br> spot of",
+      ease: "power2.out"
     })
-    gsap.to("#signup",{
+
+    
+    gsap.from(".homeleftdiv button",{
+      x: -400,
+      opacity: 0,
+      duration: 0.3,
+      stagger: 0.3,
+      clearProps:"all"
+    })
+
+    gsap.from(homeleftdivh1.current,{
+      x: -300,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.3,
+      clearProps:"all"
+    })
+
+    gsap.from(".homeleftdiv  p",{
+      x: -200,
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0.3,
+      clearProps:"all"
+    })
+
+    gsap.from(".homerightdiv",{
+      x: 500,
+      opacity: 0,
+      duration: 0.5,
+      clearProps:"all"
+    })
+
+
+
+    tl.to("#signup",{
       duration:3,
       delay:1,
       repeat:-1,
@@ -112,10 +150,12 @@ export default function Home() {
 
     {/* Home Div */}
     <div id="home" className="xl:mt-[12%] mt-[25%] sm:mt-[15%] lg:mt-[15%] mb-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto">
-          <div className="mb-16 lg:mb-1">
+        <div className="homeparentdiv grid grid-cols-1 md:grid-cols-2 w-[90%] mx-auto">
+        
+        
+          <div className="homeleftdiv mb-16 lg:mb-1">
               <button className="flex items-center border-[1px] border-[lightgray] text-[#F85E9F] shadow-sm py-3 px-5 rounded-full mb-5"><p>Explore the world!</p> <IoBagHandle className=" ml-2"/></button>
-              <h1 className="xl:text-6xl lg:text-5xl text-4xl font-medium my-5">Travel <span id="heading1" className="text-[#F85E9F]">top <br /> destination</span>  <br />
+              <h1 ref={homeleftdivh1} className="xl:text-6xl lg:text-5xl text-4xl font-medium my-5">Travel <span id="heading1" className="text-[#F85E9F]">top <br /> destination</span>  <br />
                the world</h1>
 
               <p className="text-[14px] my-3 textcolor md:w-[70%]">Where adventure meets comfort. We create unforgettable travel experiences</p>
@@ -134,7 +174,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-[100%] mx-auto mt-[30px] sm:mt-[40px] lg:mt-[30px]">
+
+
+
+
+          <div className="homerightdiv w-[100%] mx-auto mt-[30px] sm:mt-[40px] lg:mt-[30px]">
             <Travel 
             presonImg={Menina} 
             earthImg={Layer} 
@@ -145,12 +189,15 @@ export default function Home() {
             presonImgSize={{ width: 450, height: 450 }}
             />
           </div>
+
+
         </div>
         
         <div className="my-10 md:w-[90%] w-[100%] mx-auto cursor-pointer">
           <Image
           src={Frame80}
           alt="Frame80"
+          priority
           />
         </div>
     </div>
@@ -174,6 +221,7 @@ export default function Home() {
           <Image
           src={TravelAnywhere}
           alt="TravelAnywhere"
+          priority
           />
           <h2 className="my-5 font-semibold text-[#252B42] md:text-2xl text-[17px]">Lot of choices</h2>
           <p className="text-[15px] textcolor">Embrace life&apos;s vastness, <br /> venture forth,</p>
@@ -183,6 +231,7 @@ export default function Home() {
           <Image
           src={YellowPaper}
           alt="YelloPaper"
+          priority
           />
           <h2 className="my-5 font-semibold text-[#252B42] md:text-2xl text-[17px]">Best Tour Guide</h2>
           <p className="text-[15px] textcolor">Embrace life&apos;s vastness, <br /> venture forth,</p>
@@ -192,6 +241,7 @@ export default function Home() {
           <Image
           src={Card}
           alt="Card"
+          priority
           />
           <h2 className="my-5 font-semibold text-[#252B42] md:text-2xl text-[17px]">Easy Booking</h2>
           <p className="text-[15px] textcolor">Embrace life&apos;s vastness, <br /> venture forth,</p>
@@ -219,8 +269,6 @@ export default function Home() {
                     src={Feliz}
                     alt="Feliz"
                     className="z-40 w-[175px] lg:w-[232px] "
-                      // width={232}
-                      // height={232}
                     priority
                     />
                     <div className="bglinearcircle lg:h-16 h-10 lg:w-16 w-10 rounded-full absolute top-2 right-14"></div>
@@ -365,10 +413,10 @@ export default function Home() {
           <div className="relative mt-14">
 
             <div className="absolute lg:left-10 left-5 md:top-5 top-3 w-fit">
-              <button className="flex gap-2 items-center bg-[#add8e6e1] py-1 px-3 rounded-full text-[14px] text-white w-fit"><Image src={LocationImg} alt="" /> Gramado, Brazil</button>
+              <button className="flex gap-2 items-center bg-[#add8e6e1] py-1 px-3 rounded-full text-[14px] text-white w-fit"><Image src={LocationImg} alt="loading" priority/> Gramado, Brazil</button>
             </div>
 
-            <Image src={TourImg} alt="TourImg"/>
+            <Image src={TourImg} alt="TourImg" priority/>
 
             <div className="bglinearcircle lg:h-16 h-8 lg:w-16 w-8 rounded-full absolute bottom-14 lg:left-0 md:left-1 left-5"></div>
             <div className="bg-[#FACD49] lg:h-8 h-4 lg:w-8 w-4 hidden xl:block rounded-full absolute bottom-24 lg:-right-2 right-4"></div>
@@ -381,7 +429,7 @@ export default function Home() {
         <div className="">
 
           <div className="flex justify-between items-center lg:gap-10 gap-2 my-10">
-            <Image src={Thumb} alt="Thumb" className="w-[50px] md:w-[80px]"/>
+            <Image src={Thumb} alt="Thumb" className="w-[50px] md:w-[80px]" priority/>
             <div className="w-[80%] mx-auto">
               <h2 className="font-bold text-[20px] my-4">Expertise</h2>
               <p className="textcolor">Our guides are experts in their fields, ensuring in-depth knowledge and insights into every destination.</p>
@@ -389,7 +437,7 @@ export default function Home() {
           </div>
          
           <div className="flex justify-between items-center lg:gap-10 gap-2 my-10">
-            <Image src={Heart} alt="Heart" className="w-[50px] md:w-[80px]"/>
+            <Image src={Heart} alt="Heart" className="w-[50px] md:w-[80px]" priority/>
             <div className="w-[80%] mx-auto">
               <h2 className="font-bold text-[20px] my-4">Passion</h2>
               <p className="textcolor">They are passionate about travel, culture, and history, making your journey engaging and captivating.</p>
@@ -397,7 +445,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-between items-center lg:gap-10 gap-2 my-10">
-            <Image src={Letter} alt="Letter" className="w-[50px] md:w-[80px]"/>
+            <Image src={Letter} alt="Letter" className="w-[50px] md:w-[80px]" priority/>
             <div className="w-[80%] mx-auto">
               <h2 className="font-bold text-[20px] my-4">Dedication</h2>
               <p className="textcolor">Our guides are dedicated to providing exceptional service and ensuring your travel memories are truly unforgettable.</p>
@@ -413,12 +461,12 @@ export default function Home() {
         <h1 className="font-bold text-[25px]">Sign Up <span id="signup"></span></h1>
         <p className="textcolor md:w-[50%] my-2 mx-auto md:text-center">Lorem ipsum dolor sit amet consectetur. Egestas et feugiat purus enim facilisi nunc blandit nullam.</p>
         <div className="lg:flex absolute justify-between hidden items-center w-[95%] py-2 mx-auto">
-        <Image src={LeftVictor} alt="LeftVictor" className=""/>
-        <Image src={RightVictor} alt="RightVictor" className=""/>
+        <Image src={LeftVictor} alt="LeftVictor" priority/>
+        <Image src={RightVictor} alt="RightVictor" priority/>
         </div>
         <div className="my-4 flex gap-5 bg-white rounded-xl justify-around items-center md:px-4">
           <input type="text" placeholder="Enter Your email address" className="outline-none border-none "/>
-          <Image src={MessageIcon} alt="MessageIcon" className=""/>
+          <Image src={MessageIcon} alt="MessageIcon" priority/>
         </div>
       </div>
 

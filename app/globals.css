@@ -3,30 +3,38 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-.travlogtitle{
-    background-image: linear-gradient(#5D50C6,#F85E9F);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 2rem;
-    font-weight: bold;
+body {
+  overflow-x: hidden;
+  font-family: var(--font-poppins), sans-serif; 
 }
-.active{
-    color: #0b0b0b;
+
+.travlogtitle {
+  background-image: linear-gradient(#5D50C6, #F85E9F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+  font-weight: bold;
 }
-.earthbackground{
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    /* margin: 0 auto; */
-    background-color: rgb(12, 155, 238);
+
+.active {
+  color: #0b0b0b;
 }
- .earthimage{
-    width: 100% !important; 
- }
-.earthbackgroundyellow{
+
+.earthbackground {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background-color: rgb(12, 155, 238);
+}
+
+.earthimage {
+  width: 100% !important;
+}
+
+.earthbackgroundyellow {
   width: 400px;
   height: 400px;
   border-radius: 50%;
@@ -34,57 +42,52 @@ html {
   background-color: #FACD49;
 }
 
- .textcolor{
-    color: rgba(25, 24, 37, 0.75);
- }
+.textcolor {
+  color: rgba(25, 24, 37, 0.75);
+}
 
-
- @media only screen and (max-width:1024px) {
-    .earthbackground{
-        width: 300px;
-        height: 300px;
-    }
-    .earthbackgroundyellow{
-      width: 300px;
-      height: 300px;
-    }
- }
-
-
- .destinations {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .destination-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
+@media only screen and (max-width: 1024px) {
+  .earthbackground {
     width: 300px;
-    text-align: center;
+    height: 300px;
   }
-  
-  .destination-card img {
-    border-radius: 8px;
+  .earthbackgroundyellow {
+    width: 300px;
+    height: 300px;
   }
-  
+}
 
-  /* SwiperJs */
-   .swiper {
-    width: 95%;
-    height: 100%;
-    margin: 0 auto;
-  } 
-  
-  .seemorebg{
-    background: linear-gradient(#8482FF,#7723FE);
-  }
+.destinations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
+.destination-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
 
-  .bglinearcircle{
-    background: linear-gradient(#5D50C6,#F85E9F);
-    filter: blur(5px);
-  }
-  
+.destination-card img {
+  border-radius: 8px;
+}
+
+/* SwiperJs */
+.swiper {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.seemorebg {
+  background: linear-gradient(#8482FF, #7723FE);
+}
+
+.bglinearcircle {
+  background: linear-gradient(#5D50C6, #F85E9F);
+  filter: blur(5px);
+}

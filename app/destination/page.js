@@ -67,7 +67,7 @@ const Destinations = () => {
           }}
           className="mySwiper"
         >
-          {destinations.map((destination) => (
+          {destinations.slice(0,15).map((destination) => (
             <SwiperSlide key={destination.id}>
               <DestinationAPI destination={destination} />
             </SwiperSlide>

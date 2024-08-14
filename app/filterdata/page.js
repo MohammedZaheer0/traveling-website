@@ -14,6 +14,7 @@ const DestinationCard = ({ destination }) => {
         alt={destination.title}
         width={300}
         height={200}
+        priority
       />
       <h1 className='font-bold my-4 text-[20px] text-left'>{destination.title}</h1>
       <p className='text-left text-[13px]'>{destination.description}</p>
@@ -62,7 +63,7 @@ const FilterData = ({ category }) => {
 
   return (
     <div className="destinations">
-      {filteredDestination.map(destination => (
+      {filteredDestination.slice(0,15).map(destination => (
         <DestinationCard key={destination.id} destination={destination} />
       ))}
     </div>
