@@ -27,7 +27,7 @@ const Navbar = () => {
       stagger: 0.3,
       clearProps: "all"
     });
-  }, []); // Empty dependency array, no dependencies needed
+  }, []); // Empty dependency array, no dependencies needed 
 
   return (
     <div className=''>
