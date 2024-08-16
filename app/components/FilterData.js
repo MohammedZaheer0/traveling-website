@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DestinationCard from '../destinationApi/page'; // Ensure the correct path
+import DestinationCard from './DestinationAPI'; // Updated path
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';
 
@@ -32,7 +32,7 @@ const FilterData = ({ category }) => {
 
   return (
     <div className="destinations">
-      {filteredDestination.slice(0,15).map(destination => (
+      {filteredDestination.slice(0, 15).map(destination => (
         <DestinationCard key={destination.id} destination={destination} />
       ))}
     </div>

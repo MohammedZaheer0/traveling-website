@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import DestinationAPI from '../destinationApi/page'; // Ensure this path is correct
+import DestinationAPI from '../components/DestinationAPI'; // Updated path
 import RightArrow from '@/public/assets/rightarrow.png';
 import LeftArrow from '@/public/assets/leftarrow.png';
 import Image from 'next/image';
@@ -67,7 +67,7 @@ const Destinations = () => {
           }}
           className="mySwiper"
         >
-          {destinations.slice(0,15).map((destination) => (
+          {destinations.slice(0, 15).map((destination) => (
             <SwiperSlide key={destination.id}>
               <DestinationAPI destination={destination} />
             </SwiperSlide>

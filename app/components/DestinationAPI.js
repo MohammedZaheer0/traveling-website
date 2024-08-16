@@ -20,7 +20,7 @@ const DestinationAPI = ({ destination }) => {
       <h1 className='font-bold my-4 text-[20px] text-left'>{destination.title}</h1>
       <p className='text-left text-[13px]'>{destination.description}</p>
       <h3 className='text-[13px] font-medium text-left my-3'>
-        Warranty Information: {destination.warrantyInformation}
+        Warranty Information: {destination.warrantyInformation || 'N/A'}
       </h3>
       <span className='absolute top-3 right-2 bg-[#8e8e8e] text-white flex items-center py-1 px-2 border-[1px] border-[lightgray] rounded-full text-[12px]'>
         <span className='text-[#FFCD6B] mr-1'><FaStar /></span> {destination.rating}
