@@ -67,10 +67,10 @@ export default function Home() {
       {
         x: 0,
         opacity: 1,
-        duration: 4,
+        duration: 3,
         scrollTrigger: {
           trigger: ".upper-bestforyou",
-          start: "top center",
+          start: "top bottom",
           scrub: 1,
         },
       }
@@ -86,7 +86,7 @@ export default function Home() {
         duration: 3,
         scrollTrigger: {
           trigger: ".bottom-bestforyou",
-          start: "top center",
+          start: "top bottom",
           scrub: 1,
         },
       }
@@ -259,7 +259,7 @@ export default function Home() {
 
     {/* We Are The Best For  You */}
 
-    <div className="xl:mt-[150px] mt-[100px]  mb-10 w-[90%] mx-auto">
+    <div className="overflow-x-hidden xl:mt-[150px] mt-[100px]  mb-10 w-[90%] mx-auto py-16">
       <div className="grid md:grid-cols-[60%_40%] grid-cols-1 justify-between items-center">
 
     <div className="upper-bestforyou earthbackgroundyellow -z-50 relative  md:mb-2">
