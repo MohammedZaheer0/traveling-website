@@ -209,39 +209,42 @@ export default function Home() {
     <div id="about" className="w-[90%] mx-auto mt-20 mb-24">
       <h1 className="text-[#F85E9F] font-semibold text-[15px] mt-4 mb-5 sm:mb-0">WHAT WE SERVE</h1>
       
-      <div className="grid lg:grid-cols-4 grid-cols-2 justify-between items-center gap-10">
+      <div className="grid lg:grid-cols-4 grid-cols-2 justify-between items-center gap-2 md:gap-10">
 
-        <div>
-          <h1 className="font-bold md:text-4xl text-3xl text-[#252B42] mb-5">Top Values <br /> 
+        <div className="p-4">
+          <h1 className="font-bold md:text-4xl text-2xl text-[#252B42] mb-5">Top Values <br /> 
           For You</h1>
           <p className="text-[15px] textcolor">Embrace life&apos;s vastness, <br /> venture forth,</p>
         </div>
 
-        <div>
+        <div className="p-4">
           <Image
           src={TravelAnywhere}
           alt="TravelAnywhere"
           priority
+          className="h-[60px] w-[60px] object-cover"
           />
           <h2 className="my-5 font-semibold text-[#252B42] md:text-2xl text-[17px]">Lot of choices</h2>
           <p className="text-[15px] textcolor">Embrace life&apos;s vastness, <br /> venture forth,</p>
         </div>
         
-        <div>
+        <div className="p-4">
           <Image
           src={YellowPaper}
           alt="YelloPaper"
           priority
+          className="h-[60px] w-[60px] object-cover"
           />
           <h2 className="my-5 font-semibold text-[#252B42] md:text-2xl text-[17px]">Best Tour Guide</h2>
           <p className="text-[15px] textcolor">Embrace life&apos;s vastness, <br /> venture forth,</p>
         </div>
 
-        <div>
+        <div className="p-4">
           <Image
           src={Card}
           alt="Card"
           priority
+          className="h-[60px] w-[60px]"
           />
           <h2 className="my-5 font-semibold text-[#252B42] md:text-2xl text-[17px]">Easy Booking</h2>
           <p className="text-[15px] textcolor">Embrace life&apos;s vastness, <br /> venture forth,</p>
