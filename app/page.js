@@ -79,7 +79,7 @@ export default function Home() {
 
     tl.fromTo(
       ".bottom-bestforyou",
-      { x: 200, opacity: 0 }, // Start from the right side
+      { x: 200, opacity: 0, overflow:'hidden' }, // Start from the right side
       {
         x: 0,
         opacity: 1,
@@ -283,7 +283,7 @@ export default function Home() {
       </div>
 
 
-    <div className="bottom-bestforyou lg:w-[60%] mt-12 md:mt-0 ">
+    <div className="bottom-bestforyou lg:w-[60%] mt-12 md:mt-0 overflow-hidden max-w-[100vw] ">
       <h2 className="text-[#F85E9F] text-[15px] font-semibold my-2">WE ARE THE BEST FOR YOU</h2>
       <h1 className="font-semibold text-[30px] my-2">Unlock Your Dream Destination</h1>
       <small className="textcolor">We are dedicated to making your journey of discovery truly unforgettable. Our team of passionate travel experts is here to assist you in finding the destination of your dreams.</small>
